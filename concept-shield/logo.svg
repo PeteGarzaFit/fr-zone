@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="1040" height="280">
+  <title>FR Zone — Flame-Resistant Workwear, Baytown TX</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&amp;family=Barlow+Condensed:wght@600&amp;display=swap');
+    .word { font-family: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif; font-weight: 900; font-size: 92px; letter-spacing: 1px; }
+    .sub { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 2px; }
+  </style>
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16294a"/><stop offset="1" stop-color="#08142a"/></linearGradient>
+    <linearGradient id="flameOuter" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d9310b"/><stop offset=".55" stop-color="#ff5a1f"/><stop offset="1" stop-color="#ff8a2a"/></linearGradient>
+    <linearGradient id="flameInner" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffb020"/><stop offset="1" stop-color="#ffe27a"/></linearGradient>
+    <linearGradient id="tape" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#aeb8c4"/><stop offset=".45" stop-color="#eef2f6"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#aeb8c4"/></linearGradient>
+    <clipPath id="clip"><path d="M50 4 L94 17 V58 C94 88 75 105 50 116 C25 105 6 88 6 58 V17 Z"/></clipPath>
+  </defs>
+  <g transform="translate(6 8)">
+    <path d="M50 4 L94 17 V58 C94 88 75 105 50 116 C25 105 6 88 6 58 V17 Z" fill="url(#shield)"/>
+    <g clip-path="url(#clip)">
+      <path d="M50 26.5 m0 -13 l3.06 9.4 h9.88 l-8 5.8 3.06 9.4 -8 -5.8 -8 5.8 3.06 -9.4 -8 -5.8 h9.88 z" fill="#d6dde6"/>
+      <rect x="0" y="45" width="100" height="2.4" fill="#ff5a1f"/>
+      <rect x="0" y="47.4" width="100" height="7.2" fill="url(#tape)"/>
+      <rect x="0" y="54.6" width="100" height="2.4" fill="#ff5a1f"/>
+      <path d="M50 110 C34 108 24.5 98 25.5 86 C26.5 77 31 71 35 62 C37.5 70 40.5 73.5 44 75 C44.8 69 47 63.5 50 59 C53 63.5 55.2 69 56 75 C59.5 73.5 62.5 70 65 62 C69 71 73.5 77 74.5 86 C75.5 98 66 108 50 110 Z" fill="url(#flameOuter)"/>
+      <path d="M50 105.5 C42.5 104.5 38 99 38.6 92.5 C39.2 86.5 43 82.5 46 78 C47 82.5 48.4 85 50 86.5 C51.6 85 53 82.5 54 78 C57 82.5 60.8 86.5 61.4 92.5 C62 99 57.5 104.5 50 105.5 Z" fill="url(#flameInner)"/>
+    </g>
+    <path d="M50 4 L94 17 V58 C94 88 75 105 50 116 C25 105 6 88 6 58 V17 Z" fill="none" stroke="#ff5a1f" stroke-width="3.2" stroke-linejoin="round"/>
+  </g>
+  <text x="122" y="90" class="word"><tspan fill="#ff5a1f">FR</tspan><tspan fill="#0b1b33" dx="14">ZONE</tspan></text>
+  <rect x="124" y="101" width="384" height="3" fill="#ff5a1f"/>
+  <text x="124" y="126" class="sub" fill="#0b1b33" textLength="384" lengthAdjust="spacingAndGlyphs">FLAME-RESISTANT WORKWEAR · BAYTOWN, TX</text>
+</svg>
