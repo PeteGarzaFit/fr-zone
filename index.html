@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- NAV ---------- */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
 .nav.solid{background:rgba(10,10,12,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
 .brand{display:flex;align-items:center;gap:12px;color:#fff}
 .brand svg{width:34px;height:auto}
 .brand b{font-family:var(--display);font-weight:900;font-size:30px;letter-spacing:.5px;line-height:1}
@@ -46,8 +46,8 @@ a{color:inherit;text-decoration:none}
 @media (max-width:860px){.links a:not(.btn){display:none}}
 
 .lgw{font-family:var(--display);font-weight:900;font-size:168px;letter-spacing:-2px}
-.logo-nav{width:178px!important;height:auto;margin-top:6px}
-@media (max-width:600px){.logo-nav{width:140px!important}}
+.logo-nav{height:66px!important;width:auto!important;margin:0}
+@media (max-width:600px){.nav .wrap{height:72px}.logo-nav{height:52px!important}}
 .emblem .fl-o{transform-box:fill-box;transform-origin:50% 100%;animation:flick 1.1s ease-in-out infinite alternate}
 @keyframes flick{0%{transform:scale(1,1) skewX(0)}30%{transform:scale(1.06,.9) skewX(-4deg)}65%{transform:scale(.94,1.1) skewX(4deg)}100%{transform:scale(1.03,.96) skewX(-2deg)}}
 /* ---------- HERO ---------- */
@@ -68,7 +68,7 @@ a{color:inherit;text-decoration:none}
 @keyframes shake{10%,90%{transform:translateY(-1px)}20%,80%{transform:translateY(3px)}30%,50%,70%{transform:translateY(-4px)}40%,60%{transform:translateY(3px)}}
 
 .hero-inner{position:absolute;left:0;right:0;top:0;z-index:5;bottom:calc(var(--barrier-final) * 100% + var(--tape-h));display:flex;align-items:center}
-.hero-inner .wrap{width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px}
+.hero-inner .wrap{width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:84px}
 .hero-inner .wrap > div{min-width:0}
 .eyebrow{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--cond);font-weight:600;letter-spacing:3px;text-transform:uppercase;font-size:15px;color:var(--yellow)}
 .eyebrow::before{content:"";width:34px;height:3px;background:linear-gradient(90deg,var(--orange) 0 40%,transparent 40% 50%,var(--orange) 50% 70%,transparent 70% 80%,var(--orange) 80%);transform:skewX(-20deg)}
@@ -590,6 +590,13 @@ void main(){
 
 <script>
 (() => {
+  // a refresh always replays the intro from the top instead of jumping to a #section
+  try {
+    history.scrollRestoration = 'manual';
+    const nav = performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'reload' && location.hash) history.replaceState(null, '', location.pathname + location.search);
+    if (nav && nav.type === 'reload') scrollTo(0, 0);
+  } catch (e) {}
   document.getElementById('yr').textContent = new Date().getFullYear();
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hero = document.querySelector('.hero');
