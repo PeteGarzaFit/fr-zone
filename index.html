@@ -590,12 +590,11 @@ void main(){
 
 <script>
 (() => {
-  // a refresh always replays the intro from the top instead of jumping to a #section
+  // always open at the hero (replays the intro), even if the browser autocompletes a remembered #section
   try {
     history.scrollRestoration = 'manual';
-    const nav = performance.getEntriesByType('navigation')[0];
-    if (nav && nav.type === 'reload' && location.hash) history.replaceState(null, '', location.pathname + location.search);
-    if (nav && nav.type === 'reload') scrollTo(0, 0);
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    scrollTo(0, 0);
   } catch (e) {}
   document.getElementById('yr').textContent = new Date().getFullYear();
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
